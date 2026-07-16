@@ -1,104 +1,342 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impresiones3dfusions</title>
-    <meta name="description" content="Transforma tus ideas en realidad 3D con Impresiones3dfusions">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impresiones3D Fusions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=fallback" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,600&display=fallback" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #F7DC6F;
+      --color-bg: #333;
+      --color-text: #fff;
+    }
+    
+    body {
+      font-family: 'Merriweather', serif;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
+    
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 24px;
+    }
+    
+    .hero button {
+      background-color: var(--color-primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    
+    .hero button:hover {
+      background-color: #FFD700;
+    }
+    
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px;
+      background-color: var(--color-bg);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+    }
+    
+    .nav a:hover {
+      color: var(--color-primary);
+    }
+    
+    .section {
+      padding: 50px;
+      background-color: var(--color-bg);
+      border-bottom: 1px solid #333;
+    }
+    
+    .section h2 {
+      font-size: 24px;
+      margin-top: 0;
+    }
+    
+    .section p {
+      font-size: 18px;
+      color: #666;
+    }
+    
+    .solution img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .testimonial {
+      background-color: var(--color-bg);
+      padding: 20px;
+      border-bottom: 1px solid #333;
+    }
+    
+    .testimonial img {
+      width: 50px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 10px;
+    }
+    
+    .testimonial p {
+      font-size: 18px;
+      color: #666;
+    }
+    
+    .process {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      background-color: var(--color-bg);
+    }
+    
+    .process img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    
+    .call-to-action {
+      padding: 50px;
+      background-color: var(--color-bg);
+      text-align: center;
+    }
+    
+    .call-to-action button {
+      background-color: var(--color-primary);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    
+    .footer {
+      padding: 20px;
+      text-align: center;
+      background-color: var(--color-bg);
+    }
+    
+    .footer p {
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+    }
+    
+    @media (min-width: 768px) {
+      .hero {
+        min-height: 100vh;
+      }
+      
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: var(--color-bg);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .section {
+        padding: 50px;
+        background-color: var(--color-bg);
+        border-bottom: 1px solid #333;
+      }
+      
+      .solution img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      
+      .testimonial {
+        background-color: var(--color-bg);
+        padding: 20px;
+        border-bottom: 1px solid #333;
+      }
+      
+      .process {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: var(--color-bg);
+      }
+      
+      .call-to-action {
+        padding: 50px;
+        background-color: var(--color-bg);
+        text-align: center;
+      }
+      
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background-color: var(--color-bg);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 100vh;
+      }
+      
+      .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background-color: var(--color-bg);
+        backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .section {
+        padding: 50px;
+        background-color: var(--color-bg);
+        border-bottom: 1px solid #333;
+      }
+      
+      .solution img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      
+      .testimonial {
+        background-color: var(--color-bg);
+        padding: 20px;
+        border-bottom: 1px solid #333;
+      }
+      
+      .process {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        background-color: var(--color-bg);
+      }
+      
+      .call-to-action {
+        padding: 50px;
+        background-color: var(--color-bg);
+        text-align: center;
+      }
+      
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background-color: var(--color-bg);
+      }
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- SECCIÓN HERO -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">Transforma tus ideas en realidad 3D con Impresiones3dfusions</h1>
-                <p class="text-gray-600 mb-8">Encuentra soluciones personalizadas para tu negocio o proyecto con nuestra tecnología líder en impresión 3D.</p>
-                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Descubre cómo podemos ayudarte a innovar</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN PROBLEMA -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">¿Estás cansado de esperar a que tus ideas salgan de papel?</h1>
-                <p class="text-gray-600 mb-8">La tecnología de impresión 3D puede parecer complicada y costosa. ¿Qué hay al respecto en tu negocio o proyecto? ¿Tienes problemas con plazos, presupuestos o la falta de personalización?</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN SOLUCIÓN / PROPUESTA DE VALOR -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">Impresiones3dfusions: Innovación a tu alcance</h1>
-                <p class="text-gray-600 mb-8">Nuestra tecnología líder en impresión 3D ofrece velocidad, personalización y una calidad sin igual. Con Impresiones3dfusions, no solo puedes visualizar tus ideas; también las puedes tocar y sentir.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN PRUEBA SOCIAL -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">¿Qué dicen nuestros clientes sobre nuestra tecnología?</h1>
-                <p class="text-gray-600 mb-8">Nuestros clientes confían en nosotros para resolver sus problemas con impresión 3D. ¿Por qué no vas a unirte a ellos?</p>
-                <blockquote class="bg-gray-100 rounded-lg p-4">
-                    <p class="font-bold text-lg">Impresiones3dfusions nos ha ayudado a innovar en nuestro sector.</p>
-                    <p class="text-sm italic mb-2">— Juan Carlos García, Director de Innovación, XYZ Corporation</p>
-                </blockquote>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CÓMO FUNCIONA / PROCESO -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">¿Cómo podemos ayudarte?</h1>
-                <p class="text-gray-600 mb-8">Nuestro equipo de expertos te guiará a través del proceso, identificando soluciones personalizadas y plazos realistas.</p>
-                <ul class="list-none">
-                    <li class="py-2"><span class="font-bold text-lg">1</span> Contacta con nosotros para discutir tus necesidades.</li>
-                    <li class="py-2"><span class="font-bold text-lg">2</span> Nuestro equipo de expertos te guiará a través del proceso, identificando soluciones personalizadas y plazos realistas.</li>
-                    <li class="py-2"><span class="font-bold text-lg">3</span> Recibe tu innovación impresa en la fecha y hora acordados.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN CTA FINAL -->
-    <section class="py-20 bg-white overflow-hidden">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 pt-12 pb-24 flex justify-center items-center">
-            <div class="max-w-md mx-auto text-left md:text-center lg:text-left text-lg leading-relaxed">
-                <h1 class="text-3xl font-bold mb-4">No esperes más. Comienza a innovar hoy</h1>
-                <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">Contacta con nosotros ahora para un presupuesto personalizado</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="py-10 bg-gray-100">
-        <div class="container mx-auto px-4 lg:px-6 xl:px-8 flex justify-center items-center">
-            <p class="text-lg leading-relaxed text-gray-600 mb-2">Nuestro equipo te espera</p>
-            <ul class="list-none mb-0">
-                <li class="py-2"><span class="font-bold text-lg">Telf:</span> 123456789</li>
-                <li class="py-2"><span class="font-bold text-lg">Email:</span> <a href="mailto:info@impresiones3dfusions.es" class="text-blue-500 hover:text-blue-700">info@impresiones3dfusions.es</a></li>
-                <li class="py-2"><span class="font-bold text-lg">Dirección:</span> Calle de la Innovación, 1, 28004 Madrid</li>
-            </ul>
-        </div>
-    </footer>
-
-    <script>
-        // Menú móvil
-        const menuButton = document.querySelector('.menu-button');
-        const menu = document.querySelector('.menu');
-
-        menuButton.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
-    </script>
+<body>
+  <header class="nav">
+    <h1>Impresiones3D Fusions</h1>
+    <nav>
+      <a href="#hero">Inicio</a>
+      <a href="#problem">¿Qué es posible con impresiones 3D?</a>
+      <a href="#solution">Solución</a>
+      <a href="#testimonial">Testimonio</a>
+      <a href="#process">Proceso</a>
+    </nav>
+  </header>
+  <section id="hero" class="hero">
+    <h1>¿Qué es posible con impresiones 3D?</h1>
+    <p>Con nuestra tecnología de impresión 3D, puedes crear objetos personalizados y complejos de manera rápida y eficiente.</p>
+    <button>Contactanos</button>
+  </section>
+  <section id="problem" class="section">
+    <h2>¿Qué es posible con impresiones 3D?</h2>
+    <p>Nuestra tecnología de impresión 3D te permite crear objetos personalizados y complejos de manera rápida y eficiente.</p>
+  </section>
+  <section id="solution" class="section">
+    <h2>Solución</h2>
+    <img src="imagen.jpg" alt="Imagen">
+    <p>Nuestra tecnología de impresión 3D te permite crear objetos personalizados y complejos de manera rápida y eficiente.</p>
+  </section>
+  <section id="testimonial" class="testimonial">
+    <img src="logo.png" alt="Logo">
+    <p>¡Es un placer trabajar con ellos!</p>
+  </section>
+  <section id="process" class="process">
+    <h2>¿Cómo funciona nuestro proceso?</h2>
+    <ol>
+      <li>Desarrollamos un prototipo personalizado según tus necesidades.</li>
+      <li>Realizamos una impresión 3D con precisión y calidad.</li>
+      <li>Entregamos el producto final, listo para usar.</li>
+    </ol>
+  </section>
+  <footer id="call-to-action" class="call-to-action">
+    <h1>¿Qué esperas? ¡Inicia un proyecto hoy mismo!</h1>
+    <button>Contactanos</button>
+  </footer>
+  <footer id="footer" class="footer">
+    <p>Impresiones3D Fusions | Calle de la Paz, 123. Madrid.</p>
+    <p>Teléfono: 951234567 | Correo electrónico: info@impresiones3dfusions.es</p>
+  </footer>
+  <script>
+    const sections = document.querySelectorAll('section');
+    
+    window.addEventListener('scroll', () => {
+      sections.forEach(section => {
+        if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
+          section.classList.add('scroll-reveal');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
