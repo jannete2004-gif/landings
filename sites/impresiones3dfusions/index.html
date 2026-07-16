@@ -1,342 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impresiones3D Fusions</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=fallback" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,600&display=fallback" rel="stylesheet">
-  <style>
-    :root {
-      --color-primary: #F7DC6F;
-      --color-bg: #333;
-      --color-text: #fff;
-    }
-    
-    body {
-      font-family: 'Merriweather', serif;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-    }
-    
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-    
-    .hero p {
-      font-size: 24px;
-    }
-    
-    .hero button {
-      background-color: var(--color-primary);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    
-    .hero button:hover {
-      background-color: #FFD700;
-    }
-    
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 20px;
-      background-color: var(--color-bg);
-      backdrop-filter: blur(10px);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 20px;
-    }
-    
-    .nav a:hover {
-      color: var(--color-primary);
-    }
-    
-    .section {
-      padding: 50px;
-      background-color: var(--color-bg);
-      border-bottom: 1px solid #333;
-    }
-    
-    .section h2 {
-      font-size: 24px;
-      margin-top: 0;
-    }
-    
-    .section p {
-      font-size: 18px;
-      color: #666;
-    }
-    
-    .solution img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-    
-    .testimonial {
-      background-color: var(--color-bg);
-      padding: 20px;
-      border-bottom: 1px solid #333;
-    }
-    
-    .testimonial img {
-      width: 50px;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-right: 10px;
-    }
-    
-    .testimonial p {
-      font-size: 18px;
-      color: #666;
-    }
-    
-    .process {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 50px;
-      background-color: var(--color-bg);
-    }
-    
-    .process img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-right: 20px;
-    }
-    
-    .call-to-action {
-      padding: 50px;
-      background-color: var(--color-bg);
-      text-align: center;
-    }
-    
-    .call-to-action button {
-      background-color: var(--color-primary);
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    
-    .footer {
-      padding: 20px;
-      text-align: center;
-      background-color: var(--color-bg);
-    }
-    
-    .footer p {
-      font-size: 14px;
-      color: #666;
-    }
-    
-    .scroll-reveal {
-      opacity: 0;
-      transform: translateY(50px);
-      transition: opacity 1s, transform 1s;
-    }
-    
-    @media (min-width: 768px) {
-      .hero {
-        min-height: 100vh;
-      }
-      
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: var(--color-bg);
-        backdrop-filter: blur(10px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .section {
-        padding: 50px;
-        background-color: var(--color-bg);
-        border-bottom: 1px solid #333;
-      }
-      
-      .solution img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-      
-      .testimonial {
-        background-color: var(--color-bg);
-        padding: 20px;
-        border-bottom: 1px solid #333;
-      }
-      
-      .process {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px;
-        background-color: var(--color-bg);
-      }
-      
-      .call-to-action {
-        padding: 50px;
-        background-color: var(--color-bg);
-        text-align: center;
-      }
-      
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background-color: var(--color-bg);
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 100vh;
-      }
-      
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background-color: var(--color-bg);
-        backdrop-filter: blur(10px);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
-      .section {
-        padding: 50px;
-        background-color: var(--color-bg);
-        border-bottom: 1px solid #333;
-      }
-      
-      .solution img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        border-radius: 10px;
-      }
-      
-      .testimonial {
-        background-color: var(--color-bg);
-        padding: 20px;
-        border-bottom: 1px solid #333;
-      }
-      
-      .process {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 50px;
-        background-color: var(--color-bg);
-      }
-      
-      .call-to-action {
-        padding: 50px;
-        background-color: var(--color-bg);
-        text-align: center;
-      }
-      
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background-color: var(--color-bg);
-      }
-    }
-  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Impresiones3dfusions</title>
+	<style>
+		:root {
+			--color-primary: #66CCCC;
+			--color-bg: #333;
+			--color-text: #FFFFFF;
+		}
+
+		body {
+			font-family: 'Montserrat', sans-serif;
+			background-color: var(--color-bg);
+			color: var(--color-text);
+			max-width: 1200px;
+			margin: 40px auto;
+		}
+
+		.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+		.reveal.is-visible { opacity: 1; transform: translateY(0); }
+		.reveal.stagger-1 { transition-delay: 0.1s; }
+		.reveal.stagger-2 { transition-delay: 0.2s; }
+		.reveal.stagger-3 { transition-delay: 0.3s; }
+		.reveal.stagger-4 { transition-delay: 0.4s; }
+		.reveal.stagger-5 { transition-delay: 0.5s; }
+
+		.hero {
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
+			background-size: cover;
+			background-position: center;
+		}
+
+		.hero h1 {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: bold;
+			color: #FFFFFF;
+			margin-bottom: 20px;
+		}
+
+		.hero p {
+			font-family: 'Lato', sans-serif;
+			font-size: 18px;
+			color: #FFFFFF;
+			margin-bottom: 40px;
+		}
+
+		.cta-button {
+			background-color: var(--color-primary);
+			border: none;
+			padding: 15px 20px;
+			font-size: 18px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.cta-button:hover {
+			background-color: #55AAAA;
+		}
+
+		.counter {
+			display: block;
+			width: 100%;
+			margin-bottom: 20px;
+			font-family: 'Lato', sans-serif;
+			font-size: 24px;
+			color: var(--color-text);
+		}
+
+		.parallax {
+			background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
+			background-size: cover;
+			background-position: center;
+			height: 200px;
+			margin-bottom: 40px;
+		}
+
+		.social-media {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			margin-top: 20px;
+		}
+
+		.social-media a {
+			margin-right: 10px;
+			color: var(--color-text);
+			text-decoration: none;
+		}
+	</style>
 </head>
 <body>
-  <header class="nav">
-    <h1>Impresiones3D Fusions</h1>
-    <nav>
-      <a href="#hero">Inicio</a>
-      <a href="#problem">¿Qué es posible con impresiones 3D?</a>
-      <a href="#solution">Solución</a>
-      <a href="#testimonial">Testimonio</a>
-      <a href="#process">Proceso</a>
-    </nav>
-  </header>
-  <section id="hero" class="hero">
-    <h1>¿Qué es posible con impresiones 3D?</h1>
-    <p>Con nuestra tecnología de impresión 3D, puedes crear objetos personalizados y complejos de manera rápida y eficiente.</p>
-    <button>Contactanos</button>
-  </section>
-  <section id="problem" class="section">
-    <h2>¿Qué es posible con impresiones 3D?</h2>
-    <p>Nuestra tecnología de impresión 3D te permite crear objetos personalizados y complejos de manera rápida y eficiente.</p>
-  </section>
-  <section id="solution" class="section">
-    <h2>Solución</h2>
-    <img src="imagen.jpg" alt="Imagen">
-    <p>Nuestra tecnología de impresión 3D te permite crear objetos personalizados y complejos de manera rápida y eficiente.</p>
-  </section>
-  <section id="testimonial" class="testimonial">
-    <img src="logo.png" alt="Logo">
-    <p>¡Es un placer trabajar con ellos!</p>
-  </section>
-  <section id="process" class="process">
-    <h2>¿Cómo funciona nuestro proceso?</h2>
-    <ol>
-      <li>Desarrollamos un prototipo personalizado según tus necesidades.</li>
-      <li>Realizamos una impresión 3D con precisión y calidad.</li>
-      <li>Entregamos el producto final, listo para usar.</li>
-    </ol>
-  </section>
-  <footer id="call-to-action" class="call-to-action">
-    <h1>¿Qué esperas? ¡Inicia un proyecto hoy mismo!</h1>
-    <button>Contactanos</button>
-  </footer>
-  <footer id="footer" class="footer">
-    <p>Impresiones3D Fusions | Calle de la Paz, 123. Madrid.</p>
-    <p>Teléfono: 951234567 | Correo electrónico: info@impresiones3dfusions.es</p>
-  </footer>
-  <script>
-    const sections = document.querySelectorAll('section');
-    
-    window.addEventListener('scroll', () => {
-      sections.forEach(section => {
-        if (section.getBoundingClientRect().top <= window.innerHeight / 2) {
-          section.classList.add('scroll-reveal');
-        }
-      });
-    });
-  </script>
+	<header class="hero">
+		<h1>Transforme sus ideas en realidad con Impresiones3dfusions</h1>
+		<p>Modelado 3D y fusions personalizadas para aumentar su negocio.</p>
+		<button class="cta-button">Descubre cómo podemos ayudarte</button>
+	</header>
+
+	<section class="reveal stagger-1">
+		<h2>¿Estás cansado de ver tus ideas en papel?</h2>
+		<p>Nuestros clientes, como tú, buscan formas de llevar sus conceptos a la vida real. Sin embargo, enfrentan desafíos en términos de tiempo, dinero y calidad.</p>
+	</section>
+
+	<section class="reveal stagger-2">
+		<h2>Nuestra solución: modelado y fusiones personalizadas</h2>
+		<p>Con nuestros expertos en modelado 3D y fusions, podemos transformar sus ideas en realidad. Nuestros servicios están diseñados para ofrecer resultados personalizados, cumpliendo con los requisitos específicos de cada cliente.</p>
+	</section>
+
+	<section class="reveal stagger-3">
+		<h2>¿Qué dicen nuestros clientes?</h2>
+		<p>Estamos orgullosos de tener una larga lista de clientes satisfechos que pueden testimoniar nuestra calidad y profesionalismo.</p>
+		<div class="social-media">
+			<img src="#" alt="Juan López" width="50" height="50">
+			<h3>"Impresiones3dfusions nos ayudó a dar un salto en la competitividad"</h3>
+			<p>Trabajamos con ellos para crear una serie de modelos 3D que complementaron nuestros productos. El resultado fue inesperadamente positivo y aumentó nuestra presencia en el mercado.</p>
+		</div>
+	</section>
+
+	<section class="reveal stagger-4">
+		<h2>¿Cómo funciona nuestro proceso?</h2>
+		<p>Estamos comprometidos con ofrecer un servicio personalizado, asegurándonos de que nuestros clientes reciban lo que necesitan.</p>
+		<ul>
+			<li>Paso 1: Entendemos sus necesidades</li>
+			<li>Paso 2: Creamos un plan personalizado</li>
+			<li>Paso 3: Realizamos el trabajo con precisión y dedicación</li>
+		</ul>
+	</section>
+
+	<footer class="reveal stagger-5">
+		<h2>Transforme sus ideas en realidad con Impresiones3dfusions</h2>
+		<button class="cta-button">Comenzar mi proyecto hoy mismo</button>
+		<form>
+			<input type="text" name="nombre" placeholder="Nombre" required>
+			<input type="email" name="correo" placeholder="Correo electrónico" required>
+			<textarea name="mensaje" placeholder="Mensaje" required></textarea>
+			<button class="cta-button">Enviar</button>
+		</form>
+	</footer>
+
+	<footer class="pie-de-pagina">
+		<p>Impresiones3dfusions - C/ Calle del Sol, nº 42, 12345 Alcobendas (Madrid) - +34 123456789 - info@impresiones3dfusions.es</p>
+		<img src="#" alt="Logo de Impresiones3dfusions" width="100" height="50">
+	</footer>
+
+	<script>
+		var menu = document.querySelector('#menu');
+		menu.addEventListener('click', function() {
+			document.body.classList.toggle('open-menu');
+		});
+	</script>
 </body>
 </html>
