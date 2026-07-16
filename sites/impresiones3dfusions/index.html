@@ -1,159 +1,195 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Impresiones3dfusions</title>
-	<style>
-		:root {
-			--color-primary: #66CCCC;
-			--color-bg: #333;
-			--color-text: #FFFFFF;
-		}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impresiones3dfusions</title>
+  <style>
+    /* Tipografía */
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:ital,wght@0,300;0,400;1,600&display=swap');
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2 {
+      font-family: 'Montserrat', sans-serif;
+    }
 
-		body {
-			font-family: 'Montserrat', sans-serif;
-			background-color: var(--color-bg);
-			color: var(--color-text);
-			max-width: 1200px;
-			margin: 40px auto;
-		}
+    /* Paleta y estilo */
+    :root {
+      --color-primary: #8BC34A;
+      --color-bg: #333;
+      --color-text: #fff;
+    }
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+    }
 
-		.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-		.reveal.is-visible { opacity: 1; transform: translateY(0); }
-		.reveal.stagger-1 { transition-delay: 0.1s; }
-		.reveal.stagger-2 { transition-delay: 0.2s; }
-		.reveal.stagger-3 { transition-delay: 0.3s; }
-		.reveal.stagger-4 { transition-delay: 0.4s; }
-		.reveal.stagger-5 { transition-delay: 0.5s; }
+    /* Plantillas obligatorias */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    .reveal.stagger-1 { transition-delay: 0.1s; }
+    .reveal.stagger-2 { transition-delay: 0.2s; }
+    .reveal.stagger-3 { transition-delay: 0.3s; }
+    .reveal.stagger-4 { transition-delay: 0.4s; }
+    .reveal.stagger-5 { transition-delay: 0.5s; }
 
-		.hero {
-			min-height: 100vh;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
-			background-size: cover;
-			background-position: center;
-		}
+    /* Layout y diseño */
+    body {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      padding: 20px;
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .stagger-1 { transition-delay: 0.1s; }
+    .stagger-2 { transition-delay: 0.2s; }
+    .stagger-3 { transition-delay: 0.3s; }
 
-		.hero h1 {
-			font-family: 'Montserrat', sans-serif;
-			font-weight: bold;
-			color: #FFFFFF;
-			margin-bottom: 20px;
-		}
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--color-primary);
+      border-radius: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background-color: var(--color-bg);
+    }
 
-		.hero p {
-			font-family: 'Lato', sans-serif;
-			font-size: 18px;
-			color: #FFFFFF;
-			margin-bottom: 40px;
-		}
-
-		.cta-button {
-			background-color: var(--color-primary);
-			border: none;
-			padding: 15px 20px;
-			font-size: 18px;
-			cursor: pointer;
-			transition: background-color 0.3s ease;
-		}
-
-		.cta-button:hover {
-			background-color: #55AAAA;
-		}
-
-		.counter {
-			display: block;
-			width: 100%;
-			margin-bottom: 20px;
-			font-family: 'Lato', sans-serif;
-			font-size: 24px;
-			color: var(--color-text);
-		}
-
-		.parallax {
-			background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
-			background-size: cover;
-			background-position: center;
-			height: 200px;
-			margin-bottom: 40px;
-		}
-
-		.social-media {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			margin-top: 20px;
-		}
-
-		.social-media a {
-			margin-right: 10px;
-			color: var(--color-text);
-			text-decoration: none;
-		}
-	</style>
+    /* Elementos decorativos */
+    .parallax {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+  </style>
 </head>
 <body>
-	<header class="hero">
-		<h1>Transforme sus ideas en realidad con Impresiones3dfusions</h1>
-		<p>Modelado 3D y fusions personalizadas para aumentar su negocio.</p>
-		<button class="cta-button">Descubre cómo podemos ayudarte</button>
-	</header>
+  <header class="reveal" id="hero">
+    <div class="parallax" data-speed="0.3" style="background-image: url('https://www.example.com/fondo.jpg')"></div>
+    <h1>Impresiones en 3D para ti</h1>
+    <p>Con nuestra tecnología, transformamos tus ideas en realidad</p>
+    <button class="cta-button">Solicita una cotización ahora</button>
+  </header>
 
-	<section class="reveal stagger-1">
-		<h2>¿Estás cansado de ver tus ideas en papel?</h2>
-		<p>Nuestros clientes, como tú, buscan formas de llevar sus conceptos a la vida real. Sin embargo, enfrentan desafíos en términos de tiempo, dinero y calidad.</p>
-	</section>
+  <section class="reveal" id="problema">
+    <h2>¿Tienes un producto que necesitas?</h2>
+    <p>¿Te cansa buscar fuentes confiables y económicas para imprimir tus productos en 3D? ¿No encuentras el tiempo para cuidar la calidad y diseño?</p>
+  </section>
 
-	<section class="reveal stagger-2">
-		<h2>Nuestra solución: modelado y fusiones personalizadas</h2>
-		<p>Con nuestros expertos en modelado 3D y fusions, podemos transformar sus ideas en realidad. Nuestros servicios están diseñados para ofrecer resultados personalizados, cumpliendo con los requisitos específicos de cada cliente.</p>
-	</section>
+  <section class="reveal" id="solucion">
+    <h2>Nuestra solución es más que impresión en 3D</h2>
+    <p>Ofrecemos tecnología avanzada, diseños personalizados y servicio al cliente de primera calidad. ¡Transforma tus productos en realidad!</p>
+    <img src="https://www.example.com/producto.jpg" alt="Producto hecho con la tecnología de Impresiones3dfusions">
+  </section>
 
-	<section class="reveal stagger-3">
-		<h2>¿Qué dicen nuestros clientes?</h2>
-		<p>Estamos orgullosos de tener una larga lista de clientes satisfechos que pueden testimoniar nuestra calidad y profesionalismo.</p>
-		<div class="social-media">
-			<img src="#" alt="Juan López" width="50" height="50">
-			<h3>"Impresiones3dfusions nos ayudó a dar un salto en la competitividad"</h3>
-			<p>Trabajamos con ellos para crear una serie de modelos 3D que complementaron nuestros productos. El resultado fue inesperadamente positivo y aumentó nuestra presencia en el mercado.</p>
-		</div>
-	</section>
+  <section class="reveal" id="prueba-social">
+    <h2>Nuestros clientes están satisfechos</h2>
+    <p>"Me impresionó la calidad del servicio y el diseño personalizado que me ofrecieron. Ahora puedo vender mis productos en línea con confianza" - Ana Gómez, empresaria</p>
+    <img src="https://www.example.com/cliente.jpg" alt="Cliente sonriendo">
+  </section>
 
-	<section class="reveal stagger-4">
-		<h2>¿Cómo funciona nuestro proceso?</h2>
-		<p>Estamos comprometidos con ofrecer un servicio personalizado, asegurándonos de que nuestros clientes reciban lo que necesitan.</p>
-		<ul>
-			<li>Paso 1: Entendemos sus necesidades</li>
-			<li>Paso 2: Creamos un plan personalizado</li>
-			<li>Paso 3: Realizamos el trabajo con precisión y dedicación</li>
-		</ul>
-	</section>
+  <section class="reveal" id="como-funciona">
+    <h2>¿Cómo funciona nuestro proceso?</h2>
+    <ol>
+      <li>Envíanos tus archivos y descripción del producto.</li>
+      <li>Nuestro equipo de diseño lo personaliza según sus necesidades.</li>
+      <li>¡Listo! Recibe tu producto en menos de una semana.</li>
+    </ol>
+  </section>
 
-	<footer class="reveal stagger-5">
-		<h2>Transforme sus ideas en realidad con Impresiones3dfusions</h2>
-		<button class="cta-button">Comenzar mi proyecto hoy mismo</button>
-		<form>
-			<input type="text" name="nombre" placeholder="Nombre" required>
-			<input type="email" name="correo" placeholder="Correo electrónico" required>
-			<textarea name="mensaje" placeholder="Mensaje" required></textarea>
-			<button class="cta-button">Enviar</button>
-		</form>
-	</footer>
+  <section class="reveal" id="cta-final">
+    <h2>No esperes más</h2>
+    <p>Solicita una cotización ahora y descubre cómo podemos ayudarte a transformar tus ideas en realidad.</p>
+    <button class="cta-button">Solicita una cotización ahora</button>
+  </section>
 
-	<footer class="pie-de-pagina">
-		<p>Impresiones3dfusions - C/ Calle del Sol, nº 42, 12345 Alcobendas (Madrid) - +34 123456789 - info@impresiones3dfusions.es</p>
-		<img src="#" alt="Logo de Impresiones3dfusions" width="100" height="50">
-	</footer>
+  <footer>
+    <div class="parallax" data-speed="0.3" style="background-image: url('https://www.example.com/fondo.jpg')"></div>
+    <h2>Impresiones3dfusions</h2>
+    <p>Teléfono: +34 91234567 | Email: [info@impresiones3dfusions.es](mailto:info@impresiones3dfusions.es) | Dirección: C/Gran Vía, 32. Madrid</p>
+  </footer>
 
-	<script>
-		var menu = document.querySelector('#menu');
-		menu.addEventListener('click', function() {
-			document.body.classList.toggle('open-menu');
-		});
-	</script>
+  <script>
+    // Bloque de JavaScript para menú móvil (no es necesario en este caso)
+    // function openMenu() {
+    //   document.getElementById('menu').style.display = 'block';
+    // }
+    // function closeMenu() {
+    //   document.getElementById('menu').style.display = 'none';
+    // }
+  </script>
+
+  <!-- Bloques de JavaScript obligatorios -->
+  <script>
+    const hero = document.querySelector('#hero');
+    hero.addEventListener('mouseover', () => {
+      hero.classList.add('is-visible');
+    });
+    hero.addEventListener('mouseout', () => {
+      hero.classList.remove('is-visible');
+    });
+
+    // Otros bloques de JavaScript aquí...
+  </script>
+
+<script>
+/* __SCROLL_EFFECTS_INJECTED__ */
+(function () {
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(function (el) { revealObserver.observe(el); });
+
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.target, 10) || 0;
+    var duration = 1500;
+    var start = performance.now();
+    function tick(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(tick);
+      else el.textContent = target;
+    }
+    requestAnimationFrame(tick);
+  }
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter').forEach(function (el) { counterObserver.observe(el); });
+
+  var parallaxEls = document.querySelectorAll('.parallax');
+  if (parallaxEls.length) {
+    window.addEventListener('scroll', function () {
+      parallaxEls.forEach(function (el) {
+        var speed = parseFloat(el.dataset.speed || '0.3');
+        el.style.transform = 'translateY(' + (window.scrollY * speed) + 'px)';
+      });
+    }, { passive: true });
+  }
+})();
+</script>
 </body>
 </html>
