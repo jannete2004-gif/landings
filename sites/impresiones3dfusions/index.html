@@ -1,149 +1,185 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impresiones3dfusions</title>
-  <style>
-    /* Tipografía */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans:ital,wght@0,300;0,400;1,600&display=swap');
-    body {
-      font-family: 'Open Sans', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* Paleta y estilo */
-    :root {
-      --color-primary: #8BC34A;
-      --color-bg: #333;
-      --color-text: #fff;
-    }
-    body {
-      background-color: var(--color-bg);
-      color: var(--color-text);
-    }
-
-    /* Plantillas obligatorias */
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.is-visible { opacity: 1; transform: translateY(0); }
-    .reveal.stagger-1 { transition-delay: 0.1s; }
-    .reveal.stagger-2 { transition-delay: 0.2s; }
-    .reveal.stagger-3 { transition-delay: 0.3s; }
-    .reveal.stagger-4 { transition-delay: 0.4s; }
-    .reveal.stagger-5 { transition-delay: 0.5s; }
-
-    /* Layout y diseño */
-    body {
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
-    section {
-      padding: 20px;
-      background-color: var(--color-bg);
-      color: var(--color-text);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .stagger-1 { transition-delay: 0.1s; }
-    .stagger-2 { transition-delay: 0.2s; }
-    .stagger-3 { transition-delay: 0.3s; }
-
-    /* Scrollbar personalizada */
-    ::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: var(--color-primary);
-      border-radius: 5px;
-    }
-    ::-webkit-scrollbar-track {
-      background-color: var(--color-bg);
-    }
-
-    /* Elementos decorativos */
-    .parallax {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impresiones3dfusions</title>
+    <style>
+        :root {
+            --color-primary: #3498db;
+            --color-bg: #f9f9f9;
+            --color-text: #333;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
+            color: #fff;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .problem {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background-color: #f9f9f9;
+            padding: 40px;
+        }
+        
+        .solution {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
+            color: #fff;
+            text-align: center;
+        }
+        
+        .testimonials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background-color: #f9f9f9;
+            padding: 40px;
+        }
+        
+        .testimonial {
+            width: 50%;
+            text-align: left;
+        }
+        
+        .testimonial h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .process {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
+            color: #fff;
+            text-align: center;
+        }
+        
+        .cta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background-color: var(--color-primary);
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .reveal.stagger-1 {
+            transition-delay: 0.1s;
+        }
+        
+        .reveal.stagger-2 {
+            transition-delay: 0.2s;
+        }
+        
+        .reveal.stagger-3 {
+            transition-delay: 0.3s;
+        }
+        
+        .reveal.stagger-4 {
+            transition-delay: 0.4s;
+        }
+    </style>
 </head>
 <body>
-  <header class="reveal" id="hero">
-    <div class="parallax" data-speed="0.3" style="background-image: url('https://www.example.com/fondo.jpg')"></div>
-    <h1>Impresiones en 3D para ti</h1>
-    <p>Con nuestra tecnología, transformamos tus ideas en realidad</p>
-    <button class="cta-button">Solicita una cotización ahora</button>
-  </header>
-
-  <section class="reveal" id="problema">
-    <h2>¿Tienes un producto que necesitas?</h2>
-    <p>¿Te cansa buscar fuentes confiables y económicas para imprimir tus productos en 3D? ¿No encuentras el tiempo para cuidar la calidad y diseño?</p>
-  </section>
-
-  <section class="reveal" id="solucion">
-    <h2>Nuestra solución es más que impresión en 3D</h2>
-    <p>Ofrecemos tecnología avanzada, diseños personalizados y servicio al cliente de primera calidad. ¡Transforma tus productos en realidad!</p>
-    <img src="https://www.example.com/producto.jpg" alt="Producto hecho con la tecnología de Impresiones3dfusions">
-  </section>
-
-  <section class="reveal" id="prueba-social">
-    <h2>Nuestros clientes están satisfechos</h2>
-    <p>"Me impresionó la calidad del servicio y el diseño personalizado que me ofrecieron. Ahora puedo vender mis productos en línea con confianza" - Ana Gómez, empresaria</p>
-    <img src="https://www.example.com/cliente.jpg" alt="Cliente sonriendo">
-  </section>
-
-  <section class="reveal" id="como-funciona">
-    <h2>¿Cómo funciona nuestro proceso?</h2>
-    <ol>
-      <li>Envíanos tus archivos y descripción del producto.</li>
-      <li>Nuestro equipo de diseño lo personaliza según sus necesidades.</li>
-      <li>¡Listo! Recibe tu producto en menos de una semana.</li>
-    </ol>
-  </section>
-
-  <section class="reveal" id="cta-final">
-    <h2>No esperes más</h2>
-    <p>Solicita una cotización ahora y descubre cómo podemos ayudarte a transformar tus ideas en realidad.</p>
-    <button class="cta-button">Solicita una cotización ahora</button>
-  </section>
-
-  <footer>
-    <div class="parallax" data-speed="0.3" style="background-image: url('https://www.example.com/fondo.jpg')"></div>
-    <h2>Impresiones3dfusions</h2>
-    <p>Teléfono: +34 91234567 | Email: [info@impresiones3dfusions.es](mailto:info@impresiones3dfusions.es) | Dirección: C/Gran Vía, 32. Madrid</p>
-  </footer>
-
-  <script>
-    // Bloque de JavaScript para menú móvil (no es necesario en este caso)
-    // function openMenu() {
-    //   document.getElementById('menu').style.display = 'block';
-    // }
-    // function closeMenu() {
-    //   document.getElementById('menu').style.display = 'none';
-    // }
-  </script>
-
-  <!-- Bloques de JavaScript obligatorios -->
-  <script>
-    const hero = document.querySelector('#hero');
-    hero.addEventListener('mouseover', () => {
-      hero.classList.add('is-visible');
-    });
-    hero.addEventListener('mouseout', () => {
-      hero.classList.remove('is-visible');
-    });
-
-    // Otros bloques de JavaScript aquí...
-  </script>
+    <header class="hero">
+        <h1>Mejora tus productos con impresiones 3D personalizadas</h1>
+        <p>Nuestra tecnología revoluciona el diseño y la fabricación en un solo paso</p>
+        <button class="cta">Descubre cómo podemos ayudarte a destacar en el mercado</button>
+    </header>
+    <section class="problem">
+        <h2>¿Tienes dificultades para mantener tu marca fresca y atractiva?</h2>
+        <p>Nuestros productos personalizados pueden ayudar a superar cualquier desafío, desde mejorar la calidad hasta aumentar las ventas. ¿Qué más te gustaría lograr con tus impresiones 3D?</p>
+    </section>
+    <section class="solution">
+        <h2>Impresiones 3D personalizadas para marcas líderes</h2>
+        <p>Nuestra tecnología permite crear productos únicos y atractivos que se ajusten perfectamente a tus necesidades. ¡Disfruta de una mayor visibilidad, reconocimiento y éxito en el mercado!</p>
+    </section>
+    <section class="testimonials">
+        <div class="testimonial">
+            <h3>Más de nuestros clientes han logrado el éxito con nuestras impresiones 3D</h3>
+            <p>Impresiones3dfusions ha sido fundamental para nuestro proceso de innovación y crecimiento. Sus productos personalizados nos han permitido conectar con nuestros clientes de manera más efectiva.</p>
+        </div>
+    </section>
+    <section class="process">
+        <h2>Cómo podemos ayudarte a alcanzar tus objetivos</h2>
+        <ul>
+            <li>Contáctanos y describe tus necesidades.</li>
+            <li>Nuestro equipo de expertos trabajará contigo para diseñar y fabricar tu producto personalizado.</li>
+            <li>Recibe tus impresiones 3D listas para su uso inmediato.</li>
+        </ul>
+    </section>
+    <footer class="footer">
+        <p>Dirección: Calle del Sol, 34, 28002 Madrid</p>
+        <p>Teléfono: +34 912345678</p>
+        <p>Correo electrónico: <a href="mailto:info@impresiones3dfusions.es">info@impresiones3dfusions.es</a></p>
+    </footer>
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        function revealElement(element) {
+            element.classList.add('is-visible');
+        }
+        
+        function staggerReveal(elements, delay) {
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    revealElement(element);
+                }, delay + (index * 100));
+            });
+        }
+        
+        staggerReveal(revealElements, 0);
+    </script>
 
 <script>
 /* __SCROLL_EFFECTS_INJECTED__ */
