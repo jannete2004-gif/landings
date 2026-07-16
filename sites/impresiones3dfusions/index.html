@@ -6,100 +6,59 @@
     <title>Impresiones3dfusions</title>
     <style>
         :root {
-            --color-primary: #3498db;
-            --color-bg: #f9f9f9;
-            --color-text: #333;
+            --color-primary: #03055B;
+            --color-bg: #2E2F57;
+            --color-text: #FFFFFF;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif, 'Open Sans', sans-serif;
             background-color: var(--color-bg);
             color: var(--color-text);
             max-width: 1200px;
-            margin: 40px auto;
+            margin: auto;
             padding: 20px;
+        }
+        
+        nav {
+            background-color: var(--color-primary);
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            backdrop-filter: blur(5px);
+        }
+        
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        nav a:hover {
+            color: #C5CAE9;
         }
         
         .hero {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
-            color: #fff;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-        
-        .problem {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-color: #f9f9f9;
-            padding: 40px;
-        }
-        
-        .solution {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 300px;
-            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
-            color: #fff;
-            text-align: center;
-        }
-        
-        .testimonials {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-color: #f9f9f9;
-            padding: 40px;
-        }
-        
-        .testimonial {
-            width: 50%;
-            text-align: left;
-        }
-        
-        .testimonial h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        
-        .process {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-image: linear-gradient(135deg, var(--color-primary), var(--color-bg));
-            color: #fff;
-            text-align: center;
-        }
-        
-        .cta {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100px;
             background-color: var(--color-primary);
-            color: #fff;
+            color: var(--color-bg);
             padding: 20px;
-        }
-        
-        .footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50px;
-            background-color: #f9f9f9;
-            padding: 10px;
+            text-align: center;
+            height: 100vh;
         }
         
         .reveal {
@@ -113,72 +72,118 @@
             transform: translateY(0);
         }
         
-        .reveal.stagger-1 {
+        .stagger-1 {
             transition-delay: 0.1s;
         }
         
-        .reveal.stagger-2 {
+        .stagger-2 {
             transition-delay: 0.2s;
         }
         
-        .reveal.stagger-3 {
+        .stagger-3 {
             transition-delay: 0.3s;
         }
         
-        .reveal.stagger-4 {
+        .stagger-4 {
             transition-delay: 0.4s;
+        }
+        
+        .stagger-5 {
+            transition-delay: 0.5s;
+        }
+        
+        .counter {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+            }
+            
+            nav a {
+                display: block;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="hero">
-        <h1>Mejora tus productos con impresiones 3D personalizadas</h1>
-        <p>Nuestra tecnología revoluciona el diseño y la fabricación en un solo paso</p>
-        <button class="cta">Descubre cómo podemos ayudarte a destacar en el mercado</button>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    <section class="hero">
+        <h1>Impresiones 3D que Impactan</h1>
+        <h2>Transforma tus ideas en realidades inmersivas con nuestro expertise en diseño gráfico y visualización 3D</h2>
+        <button>Descubre nuestra solución</button>
+    </section>
     <section class="problem">
-        <h2>¿Tienes dificultades para mantener tu marca fresca y atractiva?</h2>
-        <p>Nuestros productos personalizados pueden ayudar a superar cualquier desafío, desde mejorar la calidad hasta aumentar las ventas. ¿Qué más te gustaría lograr con tus impresiones 3D?</p>
+        <h1>¿Estás cansado de ideas que no se materializan en realidad?</h1>
+        <h2>¿Tienes proyectos bloqueados por la falta de visibilidad o confianza en el diseño gráfico y visualización 3D?</h2>
+        <img src="imagen-problema.png" alt="Imagen del problema">
     </section>
     <section class="solution">
-        <h2>Impresiones 3D personalizadas para marcas líderes</h2>
-        <p>Nuestra tecnología permite crear productos únicos y atractivos que se ajusten perfectamente a tus necesidades. ¡Disfruta de una mayor visibilidad, reconocimiento y éxito en el mercado!</p>
+        <h1>Descubre Cómo Transformamos Tus Ideas</h1>
+        <h2>Nuestra solución incluye diseño gráfico y visualización 3D personalizados para que puedas conectar con tus audiencias de manera inmersiva.</h2>
+        <p>Con nosotros, los proyectos no se bloquean. Nuestros expertos en diseño gráfico y visualización te ayudarán a transformar tus ideas en realidades impactantes.</p>
+        <img src="imagen-solucion.png" alt="Imagen de la solución">
     </section>
-    <section class="testimonials">
-        <div class="testimonial">
-            <h3>Más de nuestros clientes han logrado el éxito con nuestras impresiones 3D</h3>
-            <p>Impresiones3dfusions ha sido fundamental para nuestro proceso de innovación y crecimiento. Sus productos personalizados nos han permitido conectar con nuestros clientes de manera más efectiva.</p>
-        </div>
+    <section class="prueba-social">
+        <h1>Confía en Nuestros Resultados</h1>
+        <p>Nuestras experiencias con clientes satisfactorios han sido una repetición constante. Aquí es lo que nuestros clientes dicen sobre nosotros:</p>
+        <blockquote>
+            <p>"Con Impresiones3dfusions, mis proyectos se convirtieron en realidad inmersiva. Es un equipo altamente profesional y dedicado a sus clientes."</p>
+            <cite>— Juan Carlos</cite>
+        </blockquote>
+        <img src="logo-cliente1.png" alt="Logo del cliente 1">
     </section>
-    <section class="process">
-        <h2>Cómo podemos ayudarte a alcanzar tus objetivos</h2>
-        <ul>
-            <li>Contáctanos y describe tus necesidades.</li>
-            <li>Nuestro equipo de expertos trabajará contigo para diseñar y fabricar tu producto personalizado.</li>
-            <li>Recibe tus impresiones 3D listas para su uso inmediato.</li>
-        </ul>
+    <section class="como-funciona">
+        <h1>Cómo Funciona Nuestra Proceso</h1>
+        <p>Con nosotros, el proceso es fácil y rápido:</p>
+        <ol>
+            <li>Contacta con nosotros.</li>
+            <li>Nuestros expertos en diseño gráfico y visualización te ayudarán a transformar tus ideas en realidades impactantes.</li>
+        </ol>
     </section>
-    <footer class="footer">
-        <p>Dirección: Calle del Sol, 34, 28002 Madrid</p>
-        <p>Teléfono: +34 912345678</p>
-        <p>Correo electrónico: <a href="mailto:info@impresiones3dfusions.es">info@impresiones3dfusions.es</a></p>
+    <section class="cta-final">
+        <h1>Descubre Nuestra Solución Ahora</h1>
+        <button>Contacta con nosotros hoy mismo para transformar tus ideas en realidad.</button>
+    </section>
+    <footer>
+        <h2>Contáctanos</h2>
+        <p>Teléfono: +34 123456789</p>
+        <p>CORREO ELECTRÓNICO: contacto@impresiones3dfusions.es</p>
+        <p>Dirección: Calle Mayor, 12. 28001 Madrid, España</p>
     </footer>
+    
     <script>
-        const revealElements = document.querySelectorAll('.reveal');
+        const menuMobile = document.querySelector('.menu-mobile');
         
-        function revealElement(element) {
-            element.classList.add('is-visible');
+        function toggleMenu() {
+            menuMobile.classList.toggle('mostrar');
         }
         
-        function staggerReveal(elements, delay) {
-            elements.forEach((element, index) => {
-                setTimeout(() => {
-                    revealElement(element);
-                }, delay + (index * 100));
-            });
-        }
-        
-        staggerReveal(revealElements, 0);
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            function animeReveal(elements) {
+                elements.forEach((element) => {
+                    element.classList.add('is-visible');
+                    
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, 300);
+                });
+            }
+            
+            animeReveal(revealElements);
+        });
     </script>
 
 <script>
